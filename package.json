@@ -4,17 +4,27 @@
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
+    "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.1.10",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.4.1",
+    "axios": "^0.21.1",
+    "history": "^5.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.4",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "redux": "^4.1.0",
+    "redux-thunk": "^2.3.0",
+    "sweetalert2": "^11.0.19",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -33,6 +43,33 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.14.5",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "jest": "^27.0.6",
+    "jsdom": "16.6.0",
+    "jsdom-global": "3.0.2"
+  },
+  "jest": {
+    "verbose": true,
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/__tests__/setupTest"
+    ],
+    "moduleNameMapper": {
+      "\\.(dtyl|css)$": "<rootDir>/src/__mocks__/styleMouks"
+    },
+    "collectCoverage": true
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-react",
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      "@babel/plugin-transform-react-jsx"
     ]
   }
 }
